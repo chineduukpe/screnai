@@ -25,7 +25,7 @@ export class LangchainService {
   ) {
     this.redisCache = new Redis({
       url: 'https://related-primate-53100.upstash.io',
-      token: '',
+      token: process.env.UPSTASH_REDIS_REST_TOKEN,
     });
   }
 

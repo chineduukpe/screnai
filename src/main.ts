@@ -5,7 +5,6 @@ import supertokens from 'supertokens-node';
 import { SupertokensExceptionFilter } from './auth/auth.filter';
 import { CloudWatchLoggerInterceptor } from './interceptors/cloudwatch-logger.interceptor';
 import * as Sentry from '@sentry/node';
-import { AllExceptionsFilter } from './interceptors/exception.filter';
 
 async function bootstrap() {
   const isProduction = process.env.NODE_ENV === 'production';
