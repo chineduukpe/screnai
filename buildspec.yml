@@ -1,0 +1,18 @@
+version: 0.2
+phases:
+  pre_build:
+    commands:
+      - export YARN_ENABLE_IMMUTABLE_INSTALLS=false
+      - yarn install
+      - yarn rebuild
+      - curl -O https://dl.google.com/linux/direct/google-chrome-stable_current_x86_64.rpm
+      - yum install -y google-chrome-stable_current_x86_64.rpm
+      - rm google-chrome-stable_current_x86_64.rpm
+  build:
+    commands:
+      - rm -rf dist
+      - export NODE_OPTIONS="--max-old-space-size=4096"
+      - yarn build
+artifacts:
+  files:
+    - '**/*'

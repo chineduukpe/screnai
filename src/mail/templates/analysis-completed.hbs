@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Analysis completed Mail</title>
+
+    <style>
+      * {
+        font-family: 'Inter', sans-serif;
+      }
+
+      body {
+        background-color: #efefef;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+      }
+
+      .main-wrapper {
+        width: 90%;
+        max-width: 700px;
+        margin: 1rem auto;
+        background-color: #fff;
+        border-radius: 10px;
+        padding: 30px;
+      }
+
+      .img {
+        text-align: center;
+        padding: 1rem 3rem 1rem 3rem;
+      }
+
+      main {
+        margin: 2rem auto;
+        text-align: center;
+      }
+
+      main h2 {
+        text-align: center;
+      }
+
+      .mx-auto {
+        margin-inline: auto;
+      }
+
+      footer {
+        /* background-color: #377666; */
+        padding: 1rem;
+        color: #fff;
+        text-align: center;
+        margin-bottom: 1rem;
+      }
+
+      .check-icon {
+        display: block;
+        width: 100px;
+        height: 100px;
+        margin: 0 auto;
+      }
+
+      footer small,
+      footer p {
+        display: block;
+        color: #666;
+      }
+
+      footer small a {
+        color: #666;
+        text-decoration: none;
+      }
+
+      footer {
+        padding: 1rem;
+        color: #fff;
+        text-align: center;
+        margin-bottom: 1rem;
+      }
+
+      footer small,
+      footer p {
+        display: block;
+        color: #666;
+      }
+
+      footer small a {
+        color: #666;
+        text-decoration: none;
+      }
+
+      .copyright {
+        margin-top: 1rem;
+        font-size: 8pt;
+      }
+
+      .logo {
+        width: 100px;
+        filter: grayscale(100%);
+        display: inline-block;
+      }
+
+      button {
+        color: white;
+        border: none;
+        padding: 15px 30px;
+        font-weight: 600;
+        border-radius: 10px;
+      }
+
+      .blue-btn {
+        background-color: #194fff;
+      }
+
+      .metrics-section {
+        text-align: left;
+        background-color: #e0eeff;
+        border-radius: 15px;
+        padding: 20px;
+        margin-top: 20px;
+      }
+
+      table thead {
+        padding: 30px;
+      }
+
+      .grid-table {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 10px;
+        margin: 30px 0;
+      }
+
+      .header {
+        font-weight: bold;
+        padding: 10px;
+        text-align: left;
+      }
+
+      .cell {
+        padding: 10px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="main-wrapper">
+      <main>
+        <img
+          class="logo"
+          src="https://uploads-ssl.webflow.com/63f74b539302c364eb09d5f3/63f75405f60fdd7932cb1bad_nophin-logo%201.svg"
+          alt=""
+        />
+        <h2 class="header">Your Analysis is ready for review</h2>
+        <button class="blue-btn">View Report</button>
+
+        <div class="metrics-section">
+          <p style="font-weight: bold">Address</p>
+          <p>{{ address }}</p>
+
+          <p style="margin-top: 30px">Hi {{ userName }},</p>
+          <p style="line-height: 25px; font-size: 14px">
+            Your analysis is ready for review. The rent roll shows a 95%
+            occupancy rate with stable rental income across units. The T-12
+            indicates consistent revenue, but expenses have increased by 8% due
+            to higher maintenance costs over the past year.
+          </p>
+
+          <table>
+            <thead>
+              <th>METRIC</th>
+              <th>BENCHMARK</th>
+              <th>VALUE</th>
+              <th>PASS/FAIL</th>
+            </thead>
+
+            <tbody>
+              {{#each benchmarks}}
+              <tr>
+                <td>{{name}}</td>
+                <td>{{benchmarkValue}}</td>
+                <td>{{min}}</td>
+                <td>{{#if isBenchmarkPassed}}Pass{{else}}Fail{{/if}}</td>
+              </tr>
+              {{/each}}
+            </tbody>
+          </table>
+
+          <button class="blue-btn">View Detailed Report</button>
+        </div>
+      </main>
+      <footer>
+        <small
+          >If you have any questions or need any help, feel free to reach out to
+          us</small
+        >
+        <small>
+          <a href="mailto:hello@nophin.com"
+            ><strong>Contact us</strong></a
+          ></small
+        >
+        <small class="copyright"> Copyright &copy; 2023 Nophin </small>
+      </footer>
+    </div>
+  </body>
+</html>

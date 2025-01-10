@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Analysis completed Mail</title>
+    <style>
+        * {
+            text-align: center;
+        }
+
+      body {
+        background-color: #efefef;
+      }
+
+        .mail-wrapper {
+            width: 90%;
+            max-width: 700px;
+            margin: 1rem auto;
+            background-color: #fff;
+            border-radius: 10px;
+        }
+
+      header {
+        text-align: center;
+        padding: 1rem 3rem 1rem 3rem;
+      }
+
+      header hr {
+        border: 1px solid #00000033;
+        margin-top: 1rem;
+      }
+
+      main h1 {
+        text-align: center;
+        color: #377666;
+        text-transform: uppercase;
+        font-size: 1.5rem;
+        font-size: 14pt;
+      }
+
+      main p {
+        color: #666;
+        font-size: 12pt;
+        padding: 0 10px 0 10px;
+        line-height: 1.5;
+      }
+
+      main {
+        margin: 2rem auto;
+      }
+
+      main a {
+        display: block;
+        margin: 0 auto;
+        width: 90%;
+        max-width: 220px;
+        background-color: #377666;
+        color: #fff;
+        padding: 1rem;
+        text-align: center;
+        text-decoration: none;
+        transition: border-radius 200ms linear;
+        border-radius: 10px;
+      }
+
+      footer {
+        /* background-color: #377666; */
+        padding: 1rem;
+        color: #fff;
+        text-align: center;
+        margin-bottom: 1rem;
+      }
+
+      .check-icon {
+        display: block;
+        width: 100px;
+        height: 100px;
+        margin: 0 auto;
+      }
+
+      footer small,
+      footer p {
+        display: block;
+        color: #666;
+      }
+
+      footer small a {
+        color: #666;
+        text-decoration: none;
+      }
+
+      @media screen and (max-width: 580px) {
+        main p {
+          color: #666;
+          font-size: 12pt;
+          padding: 0 10px 0 10px;
+          line-height: 1.5;
+          max-width: 450px;
+        }
+
+        h1 {
+          font-size: 14pt;
+        }
+      }
+
+        main a {
+            display: block;
+            margin: 0 auto;
+            width: 90%;
+            max-width: 220px;
+            background-color: #377666;
+            color: #fff;
+            padding: 1rem;
+            text-align: center;
+            text-decoration: none;
+            transition: border-radius 200ms linear;
+            border-radius: 10px;
+        }
+
+        footer {
+            padding: 1rem;
+            color: #fff;
+            text-align: center;
+            margin-bottom: 1rem;
+        }
+
+        .check-icon {
+            display: block;
+            width: 100px;
+            height: 100px;
+            margin: 0 auto;
+        }
+
+        footer small,
+        footer p {
+            display: block;
+            color: #666;
+        }
+
+        footer small a {
+            color: #666;
+            text-decoration: none;
+        }
+
+        @media screen and (max-width: 580px) {
+            main p {
+                color: #666;
+                font-size: 12pt;
+                padding: 0 10px 0 10px;
+                line-height: 1.5;
+                max-width: 450px;
+            }
+
+            h1 {
+                font-size: 14pt;
+            }
+        }
+
+        .copyright {
+            margin-top: 1rem;
+            font-size: 8pt;
+        }
+    </style>
+  </head>
+
+  <body>
+    <div class="mail-wrapper">
+        <header>
+            <img src="https://uploads-ssl.webflow.com/63f74b539302c364eb09d5f3/63f75405f60fdd7932cb1bad_nophin-logo%201.svg"
+                alt="" />
+            <img class="check-icon"
+                src="https://sites-public-assets.s3.amazonaws.com/image-icons/check-circle-svgrepo-com+1.png" alt="" />
+            <hr />
+        </header>
+        <main>
+            <h1>Analysis completed notification</h1>
+            <p>Dear {{customerName}},</p>
+            <p>Your analysis for <strong>{{fileName}}</strong> has been completed</p>
+            <p>Click on the button below to visit your dashboard and download your file.</p>
+            <a href="{{siteURL}}"> Go to Nophin Site</a>
+        </main>
+        <footer>
+            <small>If you have any questions or need any help, feel free to reach out to us</small>
+            <small> <a href="mailto:hello@nophin.com"><strong>Contact us</strong></a></small>
+            <small class="copyright"> Copyright &copy; 2023 Nophin </small>
+        </footer>
+    </div>
+</body>
+
+</html>
