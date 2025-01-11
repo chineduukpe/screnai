@@ -18,7 +18,7 @@ async function bootstrap() {
   });
 
   app.enableCors({
-    origin: [process.env.APP_DOMAIN, process.env.APP_DOMAIN_2, /\.nophin\.com/],
+    origin: [process.env.APP_DOMAIN, process.env.APP_DOMAIN_2, /\.scren\.ai/],
     allowedHeaders: [
       'content-type',
       ...supertokens.getAllCORSHeaders(),
