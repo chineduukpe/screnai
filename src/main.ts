@@ -18,7 +18,12 @@ async function bootstrap() {
   });
 
   app.enableCors({
-    origin: [process.env.APP_DOMAIN, process.env.APP_DOMAIN_2, /\.scren\.ai/],
+    origin: [
+      process.env.APP_DOMAIN,
+      process.env.APP_DOMAIN_2,
+      /\.scren\.ai/,
+      'https://main.d1w9ypisew7syp.amplifyapp.com',
+    ],
     allowedHeaders: [
       'content-type',
       ...supertokens.getAllCORSHeaders(),
